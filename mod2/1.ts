@@ -1,0 +1,1 @@
+let objarr:object[]=[{id:1,name:"emp1",city:"ahmedabad",joindate:new Date(1,23,2023),salary:20000}]
