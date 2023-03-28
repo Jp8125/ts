@@ -1,5 +1,6 @@
 const enventory:{id:number,name:string,quantity:number}[]=[{id:1,name:"cap",quantity:20},{id:2,name:"shirt",quantity:10},{id:3,name:"shoes",quantity:50}];
 let store=""
+let ht=document.getElementById("items") as HTMLElement;
 for(let item of enventory){
     store+=`<div class="card" style="background-color:orangered; border-color:darkblue;" id="display">
     <div class="card-body">
@@ -10,7 +11,7 @@ for(let item of enventory){
     </div>
   </div>`
 }
-document.getElementById("items")!.innerHTML=store;
+ht.innerHTML=store;
 function purchase(id:number):void{
     for (let item of enventory) {
         if(id==item.id){
@@ -24,9 +25,9 @@ function purchase(id:number):void{
             }
         }
     }
-    document.getElementById("items")!.innerHTML=``;
+    ht.innerHTML=``;
     for(let item of enventory){
-        document.getElementById("items")!.innerHTML+=`<div class="card" style="background-color:orangered; border-color:darkblue;">
+        ht.innerHTML+=`<div class="card" style="background-color:orangered; border-color:darkblue;">
         <div class="card-body">
           <h4 class="card-title text-white">Name:${item.name}</h4>
           <p class="card-text text-white">Quantity:${item.quantity}</p>
